@@ -1,5 +1,5 @@
 import React from 'react'
-const copyIcon = <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"  className="opacity-40"><rect x="4" y="7" width="12" height="14"></rect><path d="M16 17h4V3H8v4"></path></svg>;
+const copyIcon = <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><rect x="4" y="7" width="12" height="14"></rect><path d="M16 17h4V3H8v4"></path></svg>;
 
 function allhex({setBgChange}) {
   const allHex = [
@@ -1305,19 +1305,18 @@ function allhex({setBgChange}) {
     }
 ]
     return (
-    <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4 grid-cols-1 p-2">
+    <div className="colorContainer">
         {
         allHex.map(
             (item, i)=>
-            <div key={i} className="w-full p-2 flex items-center space-x-2 border bg-white bg-opacity-40"
-            onClick={()=>{
-                setBgChange(`${item.hex}`)
-            }}
-            aria-hidden="true"> 
-                <div className="w-14 h-14 rounded" style={{backgroundColor:`${item.hex}`}}>
+            <div key={i} className="colorCard" onClick={()=>{setBgChange(`${item.hex}`)}} aria-hidden="true"> 
+                <div className="colorBox" style={{backgroundColor:`${item.hex}`}}></div>
+                <div className="text"> 
+                <p className="word" >{item.word}</p>
+                <p className="hex" >{item.hex}</p>
                 </div>
-                <div className="text-black drop-shadow-xl flex-1" > {item.word} <br/> {item.hex}</div>
-                <button className="relative z-30 bg-white bg-opacity-50 rounded p-3" onClick={() => {
+                    
+                <button className="copyButton" onClick={() => {
                     navigator.clipboard.writeText(item.hex)
                     alert(`${item.hex} renk kodu kopyalandı!`)
                     }}>{copyIcon}</button>

@@ -5,4 +5,12 @@
 *{@apply box-border;}
 body{@apply font-mono}
 .App{@apply -mt-2}
-.container{@apply  w-full sm:max-w-6xl w-full mx-auto;}
+.container{@apply  w-full sm:max-w-7xl w-full mx-auto py-8;}
+.colorContainer{@apply grid gap-2 md:grid-cols-2 lg:grid-cols-4 grid-cols-1 p-2 }
+
+.colorCard{@apply w-full p-3 flex items-center space-x-2 rounded justify-between bg-white bg-opacity-10 border border-white border-opacity-20 shadow-xl}
+.colorBox{@apply w-16 h-16 rounded shrink shadow-inner;}
+.copyButton{@apply rounded p-3 bg-white bg-opacity-10 border border-white border-opacity-20}
+svg{@apply stroke-current text-black opacity-100}
+.text{@apply text-black text-center}
+.word{@apply text-xl}
