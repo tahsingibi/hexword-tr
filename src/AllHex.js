@@ -1,8 +1,9 @@
-import React from 'react'
+import { useState } from 'react'
+
 const copyIcon = <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><rect x="4" y="7" width="12" height="14"></rect><path d="M16 17h4V3H8v4"></path></svg>;
 
-function allhex({setBgChange}) {
-  const allHex = [
+function Allhex({setBgChange}) {
+  const hexAll = [
     {
         "word": "aba",
         "hex": "#ABA"
@@ -1304,10 +1305,24 @@ function allhex({setBgChange}) {
         "hex": "#21B1D1"
     }
 ]
+    const [filterHex, setFilterHex] = useState('')
+    const filtered = hexAll.filter((item)=>{
+        return Object.keys(item).some((key)=>
+        item[key].toString().toLowerCase().includes(filterHex.toLocaleLowerCase()))
+    })
     return (
+    <>
+
+
+     <div className="filterBox">
+        <input placeholder='Aramak istediğiniz kelimeyi veya HEX kodunu girin...' value={filterHex}
+        onChange={(e)=>setFilterHex(e.target.value)} autoFocus/>
+    </div>
+
+
     <div className="colorContainer">
         {
-        allHex.map(
+        filtered.map(
             (item, i)=>
             <div key={i} className="colorCard" onClick={()=>{setBgChange(`${item.hex}`)}} aria-hidden="true"> 
                 <div className="colorBox" style={{backgroundColor:`${item.hex}`}}></div>
@@ -1315,16 +1330,13 @@ function allhex({setBgChange}) {
                 <p className="word" >{item.word}</p>
                 <p className="hex" >{item.hex}</p>
                 </div>
-                    
                 <button className="copyButton" onClick={() => {
                     navigator.clipboard.writeText(item.hex)
                     alert(`${item.hex} renk kodu kopyalandı!`)
                     }}>{copyIcon}</button>
             </div>
-            )
-        }
+            )}
         </div>
-  )
-}
-
-export default allhex
+        </>    
+  )}
+export default Allhex

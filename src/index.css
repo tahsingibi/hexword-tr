@@ -4,7 +4,8 @@
 
 *{@apply box-border;}
 body{@apply font-mono}
-.App{@apply -mt-2}
+.App{
+    @apply min-h-screen}
 .container{@apply  w-full sm:max-w-7xl w-full mx-auto py-8;}
 .colorContainer{@apply grid gap-2 md:grid-cols-2 lg:grid-cols-4 grid-cols-1 p-2 }
 
@@ -14,3 +15,7 @@ body{@apply font-mono}
 svg{@apply stroke-current text-black opacity-100}
 .text{@apply text-black text-center}
 .word{@apply text-xl}
+
+
+.filterBox{@apply m-2 }
+.filterBox input{@apply bg-white bg-opacity-10 border border-white border-opacity-20 shadow-xl w-full rounded px-6 py-3 focus:outline-none focus:border-opacity-40 focus:bg-opacity-40}
