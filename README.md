@@ -1,4 +1,5 @@
-# HEXWORD - TR
-React öğrenmeye çalışırken Twitter'da [Fatih Kadir Akın](https://twitter.com/fkadev) 'ın paylaştığı [HEXWORDS](https://hexwords.netlify.app/) uygulamasının Türkçe versiyonunu ReactJS + TailwindCSS ile kodladım.
+# HEXWORD-TR
+[HEXWORDS](https://hexwords.netlify.app/) uygulamasının React + TailwindCss ile oluşturulmuş Türkçe versiyonudur.
+[Fatih Kadir Akın](https://twitter.com/fkadev) 'a teşekkürler.
 
-[Demo](https://hexword-tr.vercel.app/)
+[Canlı](https://hexword-tr.vercel.app/)
