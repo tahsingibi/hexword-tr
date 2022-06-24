@@ -2,11 +2,8 @@ import { useState } from "react";
 import AllHex from "./AllHex";
 import Header from "./Header";
 
-
 function App() {
-
   const [bgChange, setBgChange] = useState("ss")
-
   return (
     <div className="App" style={{backgroundColor:`${bgChange}` }}>
       <div className="container">
@@ -16,5 +13,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

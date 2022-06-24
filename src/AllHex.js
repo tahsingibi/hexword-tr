@@ -1310,16 +1310,13 @@ function Allhex({setBgChange}) {
         return Object.keys(item).some((key)=>
         item[key].toString().toLowerCase().includes(filterHex.toLocaleLowerCase()))
     })
+
     return (
     <>
-
-
      <div className="filterBox">
-        <input placeholder='Aramak istediğiniz kelimeyi veya HEX kodunu girin...' value={filterHex}
-        onChange={(e)=>setFilterHex(e.target.value)} autoFocus/>
+        <input placeholder='Kelime veya HEX kodu girin' value={filterHex}
+        onChange={(e)=>setFilterHex(e.target.value)} />
     </div>
-
-
     <div className="colorContainer">
         {
         filtered.map(

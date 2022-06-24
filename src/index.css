@@ -18,4 +18,5 @@ svg{@apply stroke-current text-black opacity-100}
 
 
 .filterBox{@apply m-2 }
-.filterBox input{@apply bg-white bg-opacity-10 border border-white border-opacity-20 shadow-xl w-full rounded px-6 py-3 focus:outline-none focus:border-opacity-40 focus:bg-opacity-40}
+.filterBox input{@apply bg-white bg-opacity-10 border border-gray-300 border-opacity-20 shadow-xl w-full rounded px-6 py-3 focus:outline-none focus:border-opacity-40 focus:bg-opacity-40}
+.filterBox input::placeholder{@apply text-black text-opacity-60}
