@@ -3,7 +3,7 @@ import AllHex from "./AllHex";
 import Header from "./Header";
 
 function App() {
-  const [bgChange, setBgChange] = useState("ss")
+  const [bgChange, setBgChange] = useState("")
   return (
     <div className="App" style={{backgroundColor:`${bgChange}` }}>
       <div className="container">
