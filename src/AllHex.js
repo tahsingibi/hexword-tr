@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const copyIcon = <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><rect x="4" y="7" width="12" height="14"></rect><path d="M16 17h4V3H8v4"></path></svg>;
 
@@ -8,6 +8,7 @@ function Allhex({setBgChange}) {
     const dataUrl = "https://gist.githubusercontent.com/f/9c59c515fca028b549a6014aa43c14b0/raw/8253074695e0777b97b6be5e96b6c51f645337ae/all-hex-words.json"
 
 
+    useEffect(()=>{
     fetch(dataUrl)
     .then((res)=>res.json())
     .then(
@@ -18,6 +19,7 @@ function Allhex({setBgChange}) {
         }
     )
     .catch((e)=>console.log(e))
+    },[])
     
 
     const [filterHex, setFilterHex] = useState('')
